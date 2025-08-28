@@ -1,0 +1,15 @@
+# Core NLP / ML
+transformers>=4.41.0
+torch>=2.2.0
+sentencepiece>=0.1.99
+Pypdf2
+
+# Extractive summarization
+sumy>=0.11.0
+
+# Evaluation
+rouge-score>=0.1.2
+pandas>=2.2.0
+
+# Optional UI
+streamlit>=1.35.0

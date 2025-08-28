@@ -6,7 +6,9 @@ A Python application that summarizes large texts using modern NLP. It supports b
 
 ## Features
 
-- Abstractive summarization using **t5-small**
+- Abstractive summarization with Hugging Face models:
+  - `facebook/bart-large-cnn` (default)
+  - `t5-small`
 - Extractive summarization using LexRank (Sumy)
 - Batch summarization of multiple `.txt` files
 - Optional Streamlit web interface
@@ -17,27 +19,15 @@ A Python application that summarizes large texts using modern NLP. It supports b
 
 ## Setup
 
-1.**Clone the repo**
-
-Open your terminal or command prompt and run:
-
-```bash
-git clone https://github.com/sneha-2x/ai-text-summarizer.git
-```
-2.**Set the path**
-```bash
-cd ai_text_summarizer
-```
-3. **Create and activate a virtual environment**
+1. **Create and activate a virtual environment (recommended):**
    ```bash
    python -m venv .venv
-   # Windows:
-   .venv\Scripts\activate
+   # Windows: .venv\Scripts\activate
    # macOS/Linux:
    source .venv/bin/activate
    ```
 
-4. **Install requirements:**
+2. **Install requirements:**
    ```bash
    pip install -r requirements.txt
    ```
@@ -76,9 +66,9 @@ Prints summaries from `bart-large-cnn`, `t5-small`, and LexRank side-by-side.
 
 ---
 
-## Streamlit Web App 
+## Streamlit Web App (Optional)
 ```bash
-python -m streamlit run streamlit_app.py
+streamlit run streamlit_app.py
 ```
 - Paste text OR upload multiple `.txt` files
 - Choose abstractive (BART/T5) or extractive (LexRank)
@@ -103,7 +93,8 @@ python eval_rouge.py --refs data/references --cands data/summaries
 
 ## Model & Approach
 
-- **Abstractive**: Uses Hugging Face `pipeline("summarization")` with 
+- **Abstractive**: Uses Hugging Face `pipeline("summarization")` with either
+  - `facebook/bart-large-cnn` – strong general-purpose summarizer
   - `t5-small` – lightweight model for faster inference
   Long texts are automatically chunked to fit model context, summarized per-chunk, and then lightly compressed.
 
