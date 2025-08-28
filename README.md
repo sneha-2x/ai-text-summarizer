@@ -17,22 +17,27 @@ A Python application that summarizes large texts using modern NLP. It supports b
 
 ## Setup
 
-**Clone the repo**
+1.**Clone the repo**
 
 Open your terminal or command prompt and run:
 
 ```bash
-git clone <your-repo-url>
-cd ai_text_summarizer 
-1. **Create and activate a virtual environment**
+git clone https://github.com/sneha-2x/ai-text-summarizer.git
+```
+2.**Set the path**
+```bash
+cd ai_text_summarizer
+```
+3. **Create and activate a virtual environment**
    ```bash
    python -m venv .venv
-   # Windows: .venv\Scripts\activate
+   # Windows:
+   .venv\Scripts\activate
    # macOS/Linux:
    source .venv/bin/activate
    ```
 
-2. **Install requirements:**
+4. **Install requirements:**
    ```bash
    pip install -r requirements.txt
    ```
