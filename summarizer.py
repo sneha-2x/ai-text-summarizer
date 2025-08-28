@@ -18,8 +18,8 @@ DEFAULT_MODEL = "facebook/bart-large-cnn"
 ALT_MODEL = "t5-small"
 
 def load_abstractive(model_name: str):
-    tok = AutoTokenizer.from_pretrained(model_name, local_files_only=False)
-    mdl = AutoModelForSeq2SeqLM.from_pretrained(model_name, local_files_only=False)
+    tok = AutoTokenizer.from_pretrained(model_name, local_files_only=True)
+    mdl = AutoModelForSeq2SeqLM.from_pretrained(model_name, local_files_only=True)
     pipe = pipeline("summarization", model=mdl, tokenizer=tok)
     return tok, mdl, pipe
 
